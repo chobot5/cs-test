@@ -11,12 +11,4 @@ export const routes = {
     path: '/rates',
     label: 'Rates',
   },
-  form: {
-    path: '/form',
-    label: 'Form',
-  },
-  rateDetail: {
-    path: '/rate/:rateId',
-    label: 'Rate',
-  },
 } satisfies Record<string, RouteType>

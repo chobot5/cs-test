@@ -1,21 +1,30 @@
 import { useRates } from '../../hooks/useRates'
 import { TableStyled } from '../../components/table'
-import { Link } from 'react-router-dom'
-import { routes } from '../../core/routes'
 
 export const RatesPage = () => {
   const data = useRates()
 
   return (
     <TableStyled.Table>
+      <TableStyled.THead>
+        <tr>
+          <TableStyled.Th>Měna</TableStyled.Th>
+          <TableStyled.Th>Stát</TableStyled.Th>
+          <TableStyled.Th>Nákup</TableStyled.Th>
+          <TableStyled.Th>Prodej</TableStyled.Th>
+          <TableStyled.Th>CNB</TableStyled.Th>
+          <TableStyled.Th>Pohyb</TableStyled.Th>
+        </tr>
+      </TableStyled.THead>
       <TableStyled.TBody>
-        {data?.items?.map((d) => (
-          <TableStyled.Tr key={d.a}>
-            <TableStyled.Td>{d.a}</TableStyled.Td>
-            <TableStyled.Td>{d.b}</TableStyled.Td>
-            <TableStyled.Td align={'right'}>
-              <Link to={routes.rateDetail.path.replace(':rateId', d.a)}>Detail</Link>
-            </TableStyled.Td>
+        {data?.map((d) => (
+          <TableStyled.Tr key={d.shortName}>
+            <TableStyled.Td>{d.shortName}</TableStyled.Td>
+            <TableStyled.Td>{d.country}</TableStyled.Td>
+            <TableStyled.Td>{d.buy}</TableStyled.Td>
+            <TableStyled.Td>{d.sell}</TableStyled.Td>
+            <TableStyled.Td>{d.cnb}</TableStyled.Td>
+            <TableStyled.Td>{d.move}</TableStyled.Td>
           </TableStyled.Tr>
         ))}
       </TableStyled.TBody>

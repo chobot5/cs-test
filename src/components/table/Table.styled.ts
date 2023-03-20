@@ -8,11 +8,17 @@ export const Table = styled.table`
 
 export const TBody = styled.tbody``
 
+export const THead = styled.thead``
+
+export const Th = styled.th<{ align?: AlignSetting }>`
+  text-align: ${({ align = 'left' }) => align};
+`
+
 export const Tr = styled.tr``
 export const Td = styled.td<{ align?: AlignSetting }>`
   background: ${({ theme }) => theme.colors.content};
   padding: 8px;
-  text-align: ${({ theme, align = 'left' }) => align};
+  text-align: ${({ align = 'left' }) => align};
   > a {
     color: ${({ theme }) => theme.colors.link};
     text-decoration: none;

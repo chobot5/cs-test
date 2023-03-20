@@ -8,10 +8,10 @@ export const HomePage = () => {
   return (
     <div>
       <ol>
-        <ListItemStyled>b</ListItemStyled>
-        <ListItemStyled>a</ListItemStyled>
-        <ListItemStyled>a</ListItemStyled>
-        <ListItemStyled>a</ListItemStyled>
+        <ListItemStyled>Funkce pro výpočet predikce CNB na počet dní</ListItemStyled>
+        <ListItemStyled>Možnost zadání počtu dní pro predikci</ListItemStyled>
+        <ListItemStyled>Možnost předvyplnit počet dní query parametrem</ListItemStyled>
+        <ListItemStyled>...</ListItemStyled>
       </ol>
     </div>
   )
